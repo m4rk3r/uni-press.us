@@ -1,0 +1,26 @@
+
+
+  body {
+     font-size:24px;
+     font-family:times;
+  }
+  #msg-bin{
+      display:flex;
+
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      height:98%;
+  }
+  #hi {
+      font-size:200px;
+  }
+
+  #visitor-welcome{
+      color: blue;
+      position: absolute;
+      bottom: 150px;
+      width: 100%;
+      text-align: center;
+  }

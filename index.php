@@ -1,26 +1,17 @@
+<?php 
+
+if (isset($_COOKIE["uni-press"])){
+  $new_visitor=false;
+} else {
+  $new_visitor=true;
+  setcookie("uni-press", "hi", time() * 150);
+}
+?>
+
 <html>
 <head>
-<style type='text/css'>
-  body {
-     font-size:24px;
-     font-family:times;
-  }
-  #msg-bin{
-      display:flex;
 
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-
-      height:98%;
-  }
-  #hi {
-      font-size:200px;
-  }
-</style>
-
-  <div id="font-detect-swf"></div>
-
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="js/jquery-1.11.2.min.js"></script>
   <script src="js/swfobject.js"></script>
   <script src="js/font-detect.js"></script>
@@ -54,6 +45,7 @@
 </script>
 </head>
 <body>
+<div id="font-detect-swf"></div>
 <div style='position:absolute;left:10px;top:10px;'>
 uni-press.us
 </div>
@@ -69,6 +61,15 @@ studio for research and production
 
 <div id='msg-bin'>
     <div id='hi'>hi!</div>
+    
+    <div id='visitor-welcome'>
+      <?php 
+        if ($new_visitor){
+          echo "welcome";
+        } else {
+          echo "welcome back";
+        }
+    ?></div>
 </div>
 
 <script>
